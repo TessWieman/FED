@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<header>
+	<header class="header-visible">
 		<!-- het logo -->
 		<a href="#">
 			<img src="images/brand-lego.svg" alt="logo van de website Lego">
@@ -32,8 +32,8 @@
 
 			<ul>
 				<li>
-					<a href="#">
-						<img src="images/right-arrow.png" alt="">
+					<a href="speelplek.html">
+						<img aria-hidden="true" src="images/right-arrow.png" alt="">
 						speelplek
 					</a>
 				</li>
@@ -41,11 +41,11 @@
 					<a href="#">startpagina</a>
 				</li>
 				<li>
-					<button>
-						<img src="images/next.png" alt="">
+					<button class="lijst2">
+						<img aria-hidden="true" src="images/next.png" alt="">
 						winkelen
 					</button>
-					<ul>
+					<!-- <ul class="navLijst2"> -->
 						<li>
 							<button>
 								<img src="images/next.png" alt="..">
@@ -57,7 +57,7 @@
 								<img src="images/next.png" alt="..">
 								Leeftijden
 							</button>
-							<ul>
+							<!-- <ul>
 								<li>
 									<a href="#">1,5+</a>
 								</li>
@@ -81,7 +81,7 @@
 										<img src="images/next.png" alt="..">
 									</a>
 								</li>
-							</ul>
+							</ul> -->
 						</li>
 						<li>
 							<button>
@@ -137,11 +137,11 @@
 					</ul>
 				</li>
 				<li>
-					<button>
-						<img src="images/next.png" alt="..">
+					<button class="lijst2">
+						<img aria-hidden="true" src="images/next.png" alt="">
 						ontdekken
 					</button>
-					<ul>
+					<!-- <ul class="navLijst2"> -->
 						<li>
 							<button>
 								<img src="images/next.png" alt="..">
@@ -190,11 +190,11 @@
 					</ul>
 				</li>
 				<li>
-					<button>
-						<img src="images/next.png" alt="..">
+					<button class="lijst2">
+						<img aria-hidden="true" src="images/next.png" alt="">
 						help
 					</button>
-					<ul>
+					<!-- <ul class="navLijst2">
 						<li>
 							<button>Bestelstatus controlleren</button>
 						</li>
@@ -216,7 +216,7 @@
 						<li>
 							<button>Vervangende onderdelen</button>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 				<li>
 					<a href="#">
@@ -224,12 +224,12 @@
 						Aanmelden
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="#">
-						<img src="images/insiders.svg" alt="..">
+						<img src="images/insiders.svg" alt="Lego Insiders club">
 						Doe mee met LEGO® Insiders
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="#">Mijn verlanglijst</a>
 				</li>
@@ -238,14 +238,13 @@
 				</li>
 				<li>
 					<a href="#">
-						<img src="" alt="">
+						<img aria-hidden="true" src="" alt="">
 						Nederland
 					</a>
 				</li>
 			</ul>
 		</nav>
 
-		<!-- Is dit niet in een li? -->
 		<div>
 			<button>
 				<img src="images/search.png" alt="zoeken">
@@ -263,6 +262,7 @@
 	</header>
 
 	<main>
+		<!-- de breadcrumbs -->
 		<section class="breadcrumbs">
 			<ol>
 				<li>
@@ -277,6 +277,7 @@
 			</ol>
 		</section>
 
+		<!-- de banner met aangebode set -->
 		<section class="aangebodenSet">
 			<div class="hoofdTekst">
 				<h1>Kerstcadeaus 2024</h1>
@@ -287,14 +288,15 @@
 			</a>
 			<h2>Bouw een geheime tuin</h2>
 			<p>Beleef schoonheid uit de Victoriaanse tijd met de nieuwe Botanische tuin.</p>
-			<a class="rondeKnoppen2" href="#">Koop nu
-				<img class="icons" src="images/next.png" alt="..">
+			<a class="rondeKnoppen" href="#">Koop nu
+				<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 			</a>
 			<a class="rondeKnoppen" href="#">Winkelen voor de feestdagen
-				<img class="icons" src="images/next.png" alt="..">
+				<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 			</a>
 		</section>
 
+		<!-- .. -->
 		<section class="categorieSets">
 			<ul>
 				<li>
@@ -355,11 +357,16 @@
 		</section>
 
 		<section class="infoSets">
-			<h2>Geweldige cadeaus</h2>
-			<a href="#">Nu winkelen</a>
-			<a href="#">
-				<img class="icons" src="images/next.png" alt="...">
-			</a>
+			<div>
+				<h2>Geweldige cadeaus</h2>
+				<a href="#">Nu winkelen 
+					<img aria-hidden="true" class="icons" src="images/next.png" alt="">
+				</a>
+				
+				<button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
+				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button>
+			</div>
+
 			<ul>
 				<li>
 					<h3>Postkantoor van de Kerstman</h3>
@@ -369,7 +376,7 @@
 					<p>€99,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 				<li>
 					<h3>Bezorgtruck van de Kerstman</h3>
@@ -379,7 +386,7 @@
 					<p>€19,99</p>
 					<p>Nieuw</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 				<li>
 					<h3>De botanische tuin</h3>
@@ -389,7 +396,7 @@
 					<p>€329,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 			</ul>
 		</section>
@@ -402,7 +409,7 @@
 					<h3>Home Alone</h3>
 					<p>Bouw een kerstklassieker na met het huis van Kevin McCallister.</p>
 					<a href="#">Koop nu
-						<img class="volgendeIcon" src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 				<li>
@@ -410,7 +417,7 @@
 					<h3>Kerstboom</h3>
 					<p>Bouw 1 boom of 2 kleinere bomen met een feestelijke 2-in-1 displayset.</p>
 					<a href="#">Koop nu
-						<img src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 				<li>
@@ -419,25 +426,30 @@
 					<h3>Bouw het Xavier institute</h3>
 					<p>Marvel-fans gaan genieten van de nieuwe LEGO® | Marvel X-Men: X-Mension</p>
 					<a href="#">Koop nu
-						<img src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 			</ul>
 		</section>
 
 		<section class="tekstBanner">
-			<img src="images/tekst-bovenkant.jpg" alt="..">
+			<img aria-hidden="true" src="images/tekst-bovenkant.jpg" alt="">
 			<h2>Bereid je voor op de feestdagen</h2>
 			<p>Bekijk onze geweldige selectie kerstcadeaus. Of je nu inspiratie voor de feestdagen of iets unieks zoekt, we hebben cadeau-ideeën voor Kerst waarmee je het perfecte cadeau kiest voor vrienden en familieleden. Dus als je op zoek bent naar kerstspeelgoed voor kinderen of een attent cadeau om te laten zien hoeveel je om iemand geeft, met ons fantastische assortiment van de beste cadeaus en ideeën voor de feestdagen hebben we voor elke leeftijd iets passends!</p>
-			<img src="images/tekst-onderkant.jpg" alt="..">
+			<img aria-hidden="true" src="images/tekst-onderkant.jpg" alt="">
 		</section>
 		
 		<section class="infoSets">
-			<h2>Schoencadeautjes</h2>
-			<a href="#">Meer info</a>
-			<a href="#">
-				<img class="icons" src="images/next.png" alt="...">
-			</a>
+			<div>
+				<h2>Schoencadeautjes</h2>
+				<a href="#">Meer info
+					<img aria-hidden="true" class="icons" src="images/next.png" alt="">
+				</a>
+
+				<button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
+				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button>
+			</div>
+
 			<ul>
 				<li>
 					<h3>Verjaardag van het biggetje</h3>
@@ -447,7 +459,7 @@
 					<p>€19,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 				<li>
 					<h3>Groot in pot</h3>
@@ -457,7 +469,7 @@
 					<p>€9,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Exclusieve</p>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 				<li>
 					<h3>Durrr Burger</h3>
@@ -467,7 +479,7 @@
 					<p>€14,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
-					<button><img src="images/shopping-bag.png" alt=".."> In Tas</button>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 			</ul>
 		</section>
@@ -476,8 +488,9 @@
 			<img src="images/banner-kat.jpg" alt="banner kat op slee">
 			<h2>Geef de superkracht van spelen cadeau!</h2>
 			<p>Winkel nu voor cadeaus</p>
+			<!-- de class icons werkt niet -->
 			<a href="#">Nu winkelen
-				<img class="icons" src="images/next.png" alt="..">
+				<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 			</a>
 		</section>
 
@@ -485,24 +498,24 @@
 			<h2>Zoek cadeaus op leeftijd</h2>
 			<ul>
 				<li>
-					<img src="images/leeftijd1.jpg" alt="Leeftijd 1,5">
+					<img class="afbSet" src="images/leeftijd1.jpg" alt="Leeftijd 1,5">
 					<h3>1,5 jaar</h3>
 					<a href="#">Nu winkelen
-						<img src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 				<li>
-					<img src="images/leeftijd4.jpg" alt="Leeftijd 4+">
+					<img class="afbSet" src="images/leeftijd4.jpg" alt="Leeftijd 4+">
 					<h3>4+ jaar</h3>
 					<a href="#">Nu winkelen
-						<img src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 				<li>
-					<img src="images/leefijd6.webp" alt="Leefttijd 6+">
+					<img class="afbSet" src="images/leefijd6.webp" alt="Leefttijd 6+">
 					<h3>6+ jaar</h3>
 					<a href="#">Nu winkelen
-						<img src="images/next.png" alt="..">
+						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</a>
 				</li>
 			</ul>
@@ -554,24 +567,29 @@
 			<h2>#LEGOChristmas</h2>
 			<p>Bekijk onze favoriete foto's van onze fancommunity! Wil je jouw LEGO® creaties met iedereen delen? Plaats je foto's op Instagram met de tag @LEGO en maak kans om op de website te komen.</p>
 			<a class="rondeKnoppen2" href="#">Nu winkelen
-				<img class="icons" src="images/next.png" alt="..">
+				<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 			</a>
 			<h3>#LEGOChristmas</h3>
 
 		<!-- Bron: https://codepen.io/shooft/pen/ZEpXmrg gebruikt voor het maken van de bolletjes onder de plaatjes, maar ik heb er zelf nummertjes van gemaakt -->	
-		<section id="justBolletjes" class="caroCarrousel" aria-label="Voorbeeld met alleen bolletjes" tabIndex="-1">
-			<!-- de id kun je zelf een naam geven en geef je mee in de js -->
+		<!-- Stappen proces carousel bouwen
+			1. Maak een screenshot van de vier plaatjes met de caption -> maar dat is niet toegankelijk.
+			2. Screenshot maken zonder caption en deze met position neerzetten -> maar dit is moeilijk met responsive.
+			3. Dus moest ik een ul maken met li en in de li een Figure met een img en een figcaption -> maar dan gaat de carousel kapot en werkt het niet meer.
+		 	4. Dus heb ik stap twee gedaan, maar dan in een alt tekst gezet wat er in de caption zou moeten staan zodat het toegankelijk blijft.
+		-->	
+		 	
 			<ul>
-				<li id="element1"><img src="images/lego-christmas1.png" alt="" /></li>
-				<li id="element2"><img src="images/lego-christmas2.png" alt="" /></li>
-				<li id="element3"><img src="images/lego-christmas3.png" alt="" /></li>
+				<li id="element1"><img src="images/lego-christmas1.png" alt="een afbeelding met vier plaatjes. plaatje 1, 2 en 3 is van @ddoshin_bricks en 4 is van @klausbricks" /></li>
+				<li id="element2"><img src="images/lego-christmas2.png" alt="een afbeelding met vier plaatjes. plaatje 1 is van @afuerstenberg17, 2 is van @lego_projectx, 3 is van @_ririblack_ en 4 is van @my_lego_collection" /></li>
+				<li id="element3"><img src="images/lego-christmas3.png" alt="een afbeelding met vier plaatjes. plaatje 1 is van @misterbriannallie, 2 is van @enricobanfo, 3 is van @private_instagram_user en 4 is van @benjamminash" /></li>
 			</ul>
 				
 			<nav>
 				<ul>
-					<li><a href="#element1" aria-label="go to element1">1</a></li>
-					<li><a href="#element2" aria-label="go to element2">2</a></li>
-					<li><a href="#element3" aria-label="go to element3">3</a></li>
+					<li><a href="#element1" aria-label="ga naar element1">1</a></li>
+					<li><a href="#element2" aria-label="ga naar element2">2</a></li>
+					<li><a href="#element3" aria-label="ga naar element3">3</a></li>
 				</ul>
 			</nav>
 			</section>
@@ -583,31 +601,31 @@
 				<li>
 					<details>
 						<summary>Welk kerstcadeau moet ik kopen voor een kind dat LEGO® sets leuk vindt?</summary>
-						Je vindt gemakkelijk iets voor alle LEGO® fans in je leven – kijk gewoon naar de <a href="">nieuwste sets</a>. Of als iemand op je lijst gek is van <a href="">prinsessen</a>, <a href="">voertuigen</a>, <a href="">ruimtevaart</a>, <a href="">knutselen</a> en ga zo maar door, kun je zoeken op <a href="">belangstelling</a>.
+						Je vindt gemakkelijk iets voor alle LEGO® fans in je leven – kijk gewoon naar de <a href="#">nieuwste sets</a>. Of als iemand op je lijst gek is van <a href="#">prinsessen</a>, <a href="#">voertuigen</a>, <a href="#">ruimtevaart</a>, <a href="#">knutselen</a> en ga zo maar door, kun je zoeken op <a href="#">belangstelling</a>.
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>Wat moet ik voor Kerstmis kopen voor een volwassen LEGO® fan?</summary>
-						Waarom zouden alleen kinderen plezier mogen hebben? Kijk op onze pagina <a href=""> Speciaal voor volwassenen</a> voor LEGO® sets die volwassen uitdaging en voldoening bieden.
+						Waarom zouden alleen kinderen plezier mogen hebben? Kijk op onze pagina <a href="#"> Speciaal voor volwassenen</a> voor LEGO® sets die volwassen uitdaging en voldoening bieden.
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>Hoe vind ik het perfecte LEGO® cadeau?</summary>
-						Probeer de <a href="">LEGO® Cadeauvinder</a>! Je kunt zoeken op <a href="">leefijd</a>, <a href="">prijs</a>, <a href="">belangstelling</a> en nog veel meer, zodat je zeker weet dat je het perfecte <a href="">LEGO cadeau</a> indt voor iedereen op je lijstje.
+						Probeer de <a href="#">LEGO® Cadeauvinder</a>! Je kunt zoeken op <a href="#">leefijd</a>, <a href="#">prijs</a>, <a href="#">belangstelling</a> en nog veel meer, zodat je zeker weet dat je het perfecte <a href="#">LEGO cadeau</a> indt voor iedereen op je lijstje.
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>Wat zijn de laatste datums waarop ik kan bestellen zodat mijn bestelling nog vóór de kerst wordt bezorgd?</summary>
-						Ga naar onze pagina <a href="">Bezorging en retournering</a> voor de nieuwste informatie over besteldatums en bezorgtijden.
+						Ga naar onze pagina <a href="#">Bezorging en retournering</a> voor de nieuwste informatie over besteldatums en bezorgtijden.
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>Heeft de LEGO® winkel dit jaar nieuwe kerstsets?</summary>
-						Let goed op voor <a href="">nieuwe LEGO® sets</a> tijdens deze kerstdagen!
+						Let goed op voor <a href="#">nieuwe LEGO® sets</a> tijdens deze kerstdagen!
 					</details>
 				</li>
 			</ul>
@@ -616,14 +634,12 @@
 
 	<footer>
 		<div>
-			<img src="images/brand-lego.svg" alt="">
+			<img src="images/brand-lego.svg" alt="het logo van de website Lego">
 			<button>
-				<img src="" alt="">
+				<img aria-hidden="true" src="images/pin.png" alt="">
 				<h3>Nederland</h3>
 			</button>
-		</div>
 
-		<div>
 			<ul>
 				<li>
 					<a href="#">Cadeaubonnen</a>
@@ -644,8 +660,8 @@
 			<h3>Abonneren op digitale marketing-e-mails</h3>
 			<input type="email" placeholder="Je e-mailadres">
 			<a href="#">
-				<img class="icons" src="images/next.png" alt="..">
-			</a>
+				<img aria-hidden="true" src="images/next.png" alt="">
+			</a>	
 		</div>
 
 		<div>
@@ -716,7 +732,7 @@
 				</ul>
 			</details>
 			<details>
-				<summary>meer over ons</summary>
+				<summary>Meer over ons</summary>
 				<ul>
 					<li>
 						<a href="#">LEGO® Magazine (GRATIS)</a>
@@ -741,21 +757,59 @@
 		</div>
 
 		<div>
+			<h3>Over ons</h3>
+			<ul>
+				<li><a href="#">Over de LEGO groep</a></li>
+				<li><a href="#">LEGO nieuws</a></li>
+				<li><a href="">Duurzaamheid</a>Duurzaamheid</li>
+				<li><a href="#">Transparantie van de supplychain</a>Transparantie van de supplychain</li>
+				<li><a href="#">LEGO productcertificering</a></li>
+				<li><a href="#">LEGO carrières</a></li>
+				<li><a href="#">LEGO compliance line</a></li>
+			</ul>
+			<h3>Ondersteuning</h3>
+			<ul>
+				<li><a href="#">Contact opnemen</a></li>
+				<li><a href="#">Bouwinstructies</a></li>
+				<li><a href="#">Vervangende onderdelen</a></li>
+				<li><a href="#">Verzending en administratie</a></li>
+				<li><a href="#">Betaalmethoden</a></li>
+				<li><a href="#">Voorwaarden en bepalingen</a></li>
+				<li><a href="#">Terugroepacties</a></li>
+			</ul>
+			<h3>Attracties</h3>
+			<ul>
+				<li><a href="#">LEGO® House</a></li>
+				<li><a href="#">LEGOLAND® Parks</a></li>
+				<li><a href="#">LEGOLAND Discorvery Centers</a></li>
+			</ul>
+			<h3>Meer over ons</h3>
+			<ul>
+				<li><a href="#">LEGO® Magazine (GRATIS)</a></li>
+				<li><a href="#">LEGO Education</a></li>
+				<li><a href="#">LEGO Ideas</a></li>
+				<li><a href="#">LEGO Foundation</a></li>
+				<li><a href="#">Aanbiedingen voor studenten</a></li>
+				<li><a href="#">Partnerprogramma</a></li>
+			</ul>
+		</div>
+
+		<div>
 			<h3>Volg ons</h3>
 			<ul>
 				<li>
 					<a href="#">
-						<img src="images/facebook.svg" alt="..">
+						<img src="images/facebook.svg" alt="Facebook logo">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="images/instagram.svg" alt="..">
+						<img src="images/instagram.svg" alt="Instagram logo">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="images/youtube.svg" alt="..">
+						<img src="images/youtube.svg" alt="Youtube logo">
 					</a>
 				</li>
 			</ul>
