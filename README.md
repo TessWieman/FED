@@ -19,7 +19,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Tess Wieman
 
   #### Je startniveau:
-  Ik ga beginnen met blauw om weer in te komen, maar ik denk dat ik gaande weg naar rood ga.
+  Blauw
 
   #### Je focus:
   Responsive
@@ -262,11 +262,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | student 1 Tess                                                             | student 2          | student 3    | student 4        |
+  | ---                                                                        | ---                | ---          | ---              |
+  | De artikelen section wil niet correct responsive hoe verbeter ik dit?      | en dit             | en ik dit    | en dan ik dat    |
+  | Hoe maak je een pop-up?                                                    | dit als er tijd is | nog een punt | dit wil ik zeker |
+  | Hoe kan ik de video van de Speelplek pagina in mijn document zetten?       | ...                | ...          | ...              |
+  | De afbeelding banner met de kat is op mobiel ingezoomd en op laptop zijn normale grootte, hoe zoom ik een afbeelding in?                                                                          | ...                | ...          | ...              |
+  | Tips voor de side-slider met positionering (vanaf Home Alone set)?         | ...                | ...          | ...              |
+  | Hoe selecteer in mijn css media query de foot ul li?                       | ...                | ...          | ...              |
+  | Moet ik plaatjes verander van kleur bij dark mode, zo ja hoe?                       | ...                | ...          | ...              |  
+
+
+
 
 
   ### Verslag van meeting
@@ -317,8 +324,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. [css grid generator](https://cssgrid-generator.netlify.app/)
+  2. [css tricks flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  3. [codepen carousel ](https://codepen.io/shooft/pen/ZEpXmrg)
+  4. header, Thomas Norden & ChatGPT
+  5. [css details en summary](https://www.sitepoint.com/style-html-details-element/)
+  6. 
 
 </details>

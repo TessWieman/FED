@@ -11,12 +11,15 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
 	--color-text:#111;
 	--size-p-text: medium;
 	--weight-p-text: 350;
 	--size-h2-text: x-large;
 	--weight-h2-text: bold;
+	--color-text-2: white;
+	--color-background: black;
+	--dark-mode-background: #004848;
+	--dark-mode-knoppen: black;
 }
 
 
@@ -33,41 +36,6 @@ body {
 /********/
 main {
 	background-color: #14a2a1;
-}
-
-
-/**********/
-/* header */
-/**********/
-header {
-	display: flex;
-  	align-items: center;
-  	/* position: fixed; */
-  	width: 100%;
-	gap: 1em;
-	background-color: white;
-	padding: .5em;
-}
-
-header > a img, button img {
-	width: 2.5em;
-	height: auto;
-}
-
-div button img, nav ul li a img, div a img {
-	width: 1.25em;
-	height: auto;
-}
-
-header nav {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
-	transform: translateX(-100%);
-	transition: .3s;
 }
 
 
@@ -92,9 +60,146 @@ ul, ol {
 /* Alle "next" icoontjes */
 /*************************/
 .icons {
-	width: 0.8em;
+	width: .8em;
 	height: auto;
 }
+
+
+/*****************************************************************/
+/* header ********************************************************/
+/* header animatie die verdwijnt en weer verschijnt met scrollen */
+/* bron: Thomas Norden & ChatGPT *********************************/
+/*****************************************************************/
+.header-hidden {
+	position: fixed;
+	top: -100px;
+	transition: top 0.3s;
+}
+  
+.header-visible {
+	position: fixed;
+	top: 0;
+	transition: top 0.3s;
+}
+
+header div button {
+	border: none;
+	background-color: white;
+}
+
+/* kijken of dit wel goed gaat met button img  */
+header > a img,  button img {
+	width: 2.5em;
+	height: auto;
+}
+
+div button img, nav ul li a img, div a img {
+	width: 1.25em;
+	height: auto;
+}
+
+/***************************************************/
+/* bron: https://codepen.io/TessWieman/pen/ByBoLNW */
+/***************************************************/
+header {
+	display:flex;
+	/* justify-content:space-between; */
+	align-items:center;
+	
+	position:sticky;
+	top:0;
+
+	width: 100%;
+	background: white;
+}
+   
+/***************/
+/* MENU BUTTON */
+/***************/
+header > button {
+	order:-1;
+}
+  
+/************/
+/* HET MENU */
+/************/
+nav {
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	
+	translate:-100% 0%;
+	
+	transition:translate .3s;
+}
+
+header nav u li a img {
+	width: 1em;
+	height: auto;
+}
+  
+/* als menu open is */
+nav.toonMenu {
+	translate:0% 0%;
+}
+
+/* eigen code tweede lijst */
+.navLijst2 {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Dit moet de lijst buiten beeld houden */
+  width: 300px;
+  height: 100%;
+  background: white;
+  transition: right 0.3s ease-in-out;
+}
+
+.navLijst2.toonSubmenu {
+  right: 0; /* Schuift de lijst naar binnen */
+}
+
+  
+/****************************************************************/
+/* styling voor de header als de browser minimaal 38em breed is */
+/****************************************************************/
+/* @media (min-width:38em) {
+	header > button {
+		display:none;
+	}	
+	nav {
+		position:static;
+		translate:unset;
+		padding:0;
+		
+		background:none;
+	}	
+	nav button {
+		display:none;
+	}
+	nav ul {
+		display:flex;
+		gap:1em;
+	}
+	nav a {
+		flex-direction:column;
+		
+		border:none;
+	}
+	header > a:last-of-type {
+		flex-direction:column;
+		}
+} */
+
+/****************************************************************/
+/* styling voor de header als de browser minimaal 57em breed is */
+/****************************************************************/
+/* @media (min-width:57em) {
+	header > a:last-of-type, nav a {
+		flex-direction:row;
+	}
+} */
 
 
 /************************/
@@ -105,15 +210,25 @@ section.breadcrumbs ol{
 	background-color: white;
 	align-items: center;
 	gap: 0.5em;
+	margin-top: 3em;
+	margin-bottom: 0;
 }
 
 section.breadcrumbs ol li p {
 	color: grey;
+	font-size: .88em;
+	font-weight: bold;
 }
 
-section.breadcrumbs ol:first-of-type a {
+section.breadcrumbs ol a {
 	color: #016db7;
 }
+
+section.breadcrumbs ol li p, section.breadcrumbs ol li a {
+	font-size: .88em;
+	font-weight: bold;
+}
+
 
 
 /**************************/
@@ -138,25 +253,21 @@ section.breadcrumbs ol:first-of-type a {
 	border-radius: 1.56em;
 }
 
-.rondeKnoppen2 {
-	display: inline-block;
-	padding: .6em 1.25em;
-	border: 2px solid #004848;
+.rondeKnoppen:hover {
 	background-color: #004848;
-	border-radius: 1.56em;
 	color: white;
 }
 
 section.aangebodenSet p {
 	font-size: var(--size-p-text);
 	font-weight: var(--weight-p-text);
+	
 }
 
 section.aangebodenSet h2 {
 	font-size: var(--size-h2-text);
 	font-weight: var(--weight-h2-text);
 }
-
 
 /**************************/
 /* Section: categorieSets */
@@ -165,16 +276,16 @@ section.categorieSets ul {
 	display: flex;
 	text-align: center;
 	gap: .4em;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 
-	display: grid;
+	/* display: grid; */
 	/* grid-template-columns: 1fr 1fr 1fr 1fr;  */
-	gap: .4em;
-	justify-content: center;
+	/* gap: .4em; */
+	/* justify-content: center; */
 }
 
 section.categorieSets ul li a img {
-	width: 94%;
+	width: 35%;
 	height: auto;
 }
 
@@ -185,28 +296,38 @@ section.categorieSets h3 {
 }
 
 /*https://chatgpt.com/c/674dc11e-69f4-8004-a049-d1661abe8772*/
-@media (max-width: 375px) { /* Voor iPhone SE */
+/* @media (max-width: 375px) { 
 	.categorieSets ul {
-	grid-template-columns: repeat(4, 1fr); /* 4 items per rij */
+	grid-template-columns: repeat(4, 1fr); 
 	}
 }
   
-@media (min-width: 1440px) { /* Voor MacBook Air */
+@media (min-width: 1440px) { 
 	.categorieSets ul {
-	grid-template-columns: repeat(9, 1fr); /* Alles op 1 rij */
+	grid-template-columns: repeat(9, 1fr); 
 	}
 }
   
-@media (min-width: 376px) and (max-width: 1439px) { /* Tussenliggende schermen */
+@media (min-width: 376px) and (max-width: 1439px) { 
 	.categorieSets ul {
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexibel en responsief */
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
-}
+} */
   
 
 /*********************/
 /* Section: infoSets */
 /*********************/
+section.infoSets .none {
+	display: none;
+}
+
+section.infoSets ul {
+	display: flex;
+	overflow-x: auto;
+	gap: 1em;
+}
+
 section.infoSets > ul li{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -214,6 +335,7 @@ section.infoSets > ul li{
 	background: white;
 	row-gap: 0.5em;
 	padding: .5em;
+	min-width: 85%;
 }
 
 section.infoSets .like {
@@ -221,13 +343,17 @@ section.infoSets .like {
 	grid-column-end: 2;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	justify-self: start;
 }
 
 section.infoSets > ul li p:nth-of-type(4) {
-	background: #ffd50a;
-	padding: .5em;
+	background-color: #ffd50a;
+	/* padding: .5em; */
 	grid-column-end: -1;
 	grid-row-start: 1;
+	align-self: center;
+	text-align: center;
+	justify-self: end;
 }
 
 section.infoSets > ul li p:first-of-type {
@@ -263,6 +389,7 @@ section.infoSets .plaatje {
 	grid-column-end: -1;
 	grid-row-start: 2;
 	grid-row-end: 3;
+	justify-self: center;
 }
 
 section.infoSets > ul li button:nth-of-type(2) {
@@ -285,18 +412,28 @@ section.infoSets h2 {
 	font-weight: var(--weight-h2-text);
 }
 
+@media (min-width: 582px) {
+	section.infoSets .none {
+		display: block;
+		
+	}
+	section.infoSets div {
+		display: flex;
+		
+	}
+}
+
 /***************************/
 /* Section: sideScrollSets */
 /***************************/
 section.sideScrollSets ul{
 	display: flex;
 	text-align: center;
-	gap: 1em;
 	overflow-x: auto;
 }
 
 section.sideScrollSets .afbSet{
-	width: 45%;
+	width: 120%;
 	height: auto;
 }
 
@@ -320,11 +457,12 @@ section.tekstBanner {
 	text-align: center;
 }
 
-section.tekstBanner h2, p {
+section.tekstBanner h2, section.tekstBanner p {
 	margin: 1.5em;
 	line-height: 1.5em;
 }
 
+/* wat is section 8 naam */
 section.tekstBanner img, section:nth-of-type(8) img {
 	width: 100vw;
 }
@@ -337,13 +475,33 @@ section.tekstBanner p {
 /**********************/
 /* Section: katBanner */
 /**********************/
+section.katBanner {
+	text-align: center;
+}
 
+section.katBanner h2 {
+	font-weight: 350;
+	font-size: large;
+	margin: 0em 2em 0em 2em;
+}
 
+section.katBanner p {
+	font-size: small;
+	font-weight: 350;
+}
 
-/****************/
-/* Section: FAQ */
-/****************/
+section.katBanner a {
+	display: inline-block;
+	padding: .6em 1.25em;
+	background-color: #004848;
+	border-radius: 1.56em;
+	color: white;
+}
 
+section.katBanner .icons {
+	width: .8em;
+	height: auto;
+}
 
 
 /******************************/
@@ -358,11 +516,26 @@ section.tekstBanner p {
 
   	position: relative;
 	outline:none;
+	background: white;
 }
 
 .caroCarrousel h2 {
 	font-size: var(--size-h2-text);
 	font-weight: var(--weight-h2-text);
+	padding-top: 2em;
+}
+
+.caroCarrousel h2, .caroCarrousel p {
+	text-align: center;
+	margin: 1em;
+}
+
+.caroCarrousel > a {
+	display: inline-block;
+	padding: .6em 1.25em;
+	background: grey;
+	border-radius: 1.56em;
+	color: var(--color-text-2);
 }
 
 /* dark mode */
@@ -472,6 +645,29 @@ section.tekstBanner p {
 }
 
 
+/****************/
+/* Section: FAQ */
+/****************/
+section.FAQ {
+	background-color: white;
+	margin: 1em;
+}
+
+section.FAQ a {
+	color: #016db7;
+}
+
+section.FAQ details {
+	font-size: medium;
+	font-weight: 300;
+}
+
+section.FAQ details summary {
+	font-size: large;
+	font-weight: 400;
+}
+
+
 /**********/
 /* footer */
 /**********/
@@ -489,6 +685,22 @@ footer ul li a {
 footer div:first-of-type > button {
 	background: #18142D;
 	color: white;
+	display: flex;
+	border: none;
+}
+
+footer div:first-of-type button img {
+	width: 10%;
+	height: auto;
+}
+
+footer div:first-of-type button h3 {
+	font-size: var(--size-p-text);
+	font-weight: var(--weight-p-text);
+}
+
+footer div:first-of-type ul li {
+	margin: 1.5em;
 }
 
 footer img:first-of-type {
@@ -496,7 +708,34 @@ footer img:first-of-type {
 	height: auto;
 }
 
-footer div:last-of-type, div:nth-of-type(6) {
+footer div:nth-of-type(2) a img {
+	width: 8%;
+	background: #f47d20;
+	border-top-right-radius: .5em;
+	border-bottom-right-radius: .5em;
+}
+
+footer div:nth-of-type(2) input {
+	padding: 1em;
+}
+
+footer div:nth-of-type(4) {
+	display: none;
+}
+
+footer div:nth-of-type(5) ul {
+	display: flex;
+	gap: 1em;
+	height: 3.375rem;
+	align-items: center;
+}
+
+footer div:nth-of-type(5) ul li a img {
+	width: 50%;
+	height: auto;
+}
+
+footer div:last-of-type, footer div:nth-of-type(6) {
 	font-size: small;
 	font-weight: 450;
 	line-height: 2em;
@@ -509,6 +748,75 @@ footer div:nth-of-type(6) ul {
 
 footer div:nth-of-type(6) ul li {
 	padding: 1.25em;
+}
+
+/*********************/
+/* footer responsive */
+/*********************/
+/* half scherm */
+/* de lijst elementen moeten nog als vierkantjes staan */
+@media (min-width: 903px) {
+	footer {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 6fr 1fr 1fr 1fr 1fr;
+	}
+	footer div:nth-of-type(4) {
+		display: block;
+	}
+	footer div:nth-of-type(3) {
+		display: none;
+	}
+	footer div:nth-of-type(2) {
+		grid-row-start: 3;
+	}
+	footer div:nth-of-type(5) {
+		grid-row-start: 3;
+		grid-column-end: -1;
+	}
+	footer div:nth-of-type(6) {
+		grid-row-start: 4;
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+	footer div:last-of-type {
+		grid-row-start: 5;
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+}
+
+/* volledig scherm */
+/* de lijst elementen moeten nog naast elkaar staan */
+@media (min-width: 1360px) {
+	footer {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 6fr 1fr 1fr 1fr;
+	}
+	/* footer div:nth-of-type(4) {
+		display: block;
+	}
+	footer div:nth-of-type(3) {
+		display: none;
+	} */
+	footer div:nth-of-type(2) {
+		grid-row-start: 2;
+	}
+	footer div:nth-of-type(5) {
+		grid-row-start: 2;
+		grid-column-end: -1;
+	}
+	footer div:nth-of-type(6) {
+		grid-row-start: 3;
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+	footer div:last-of-type {
+		grid-row-start: 4;
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
 }
 
 /******************************************************************/
@@ -553,4 +861,52 @@ details[open] summary {
 details {
 	border: 2px solid white;
 	margin: 0.5em;
+}
+
+
+/*************/
+/* dark mode */
+/*************/
+@media (prefers-color-scheme: dark) {
+	main {
+		background-color: var(--dark-mode-background);
+		color: var(--color-text-2);
+	}
+}
+
+
+
+/*************/
+/* Speelplek */
+/*************/
+
+/*******************/
+/* headerSpeelplek */
+/*******************/
+.headerSpeelplek h1 {
+	visibility: hidden;
+}
+
+/* .headerSpeelplek img:first-of-type {
+	width: 10em;
+	height: auto;
+} */
+
+
+/***********************/
+/* section: ontdekMeer */
+/***********************/
+section.ontdekMeer ul {
+	display: flex;
+	overflow-x: auto;
+}
+
+/* section.ontdekMeer ul li {
+	margin: 0em 2em 0em 2em;
+} */
+
+section.ontdekMeer ul li a img {
+	width: 300%;
+	height: auto;
+	border-radius: 1em;
 }
