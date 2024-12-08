@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego for kids</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/speelplek.css">
 </head>
 <body>
     <header class="headerSpeelplek">
-        <!-- display none maken -->
         <a href="#">
-			<img src="images/brand-lego.svg" alt="logo van de website Lego">
+			<img class="invisible" aria-hidden="false" src="images/brand-lego.svg" alt="logo van de website Lego">
 		</a>
 
         <!-- invisible maken -->
         <h1>Lego Insiders club, speelplek</h1>
 
-        <!-- <img aria-hidden="true" src="images/banner-asset-mobile kopie.webp" alt="">
-        <img aria-hidden="true" src="images/avatar-campaign.webp" alt="">
-        <img aria-hidden="true" src="images/chest.webp" alt="">
-        <img aria-hidden="true" src="images/gem.webp" alt=""> -->
+        <div>
+            <img aria-hidden="true" src="images/banner-asset-mobile kopie.webp" alt="">
+            <img aria-hidden="true" src="images/avatar-campaign.webp" alt="">
+            <img aria-hidden="true" src="images/chest.webp" alt="">
+            <img aria-hidden="true" src="images/gem.webp" alt="">
 
-        <p>Wie ga jij vandaag zijn? Word lid en maak je gepersonaliseerde avatar!</p>
-        <a href="#">Word nu lid!
-            <img aria-hidden="true" src="images/next.png" alt="">
-        </a>
+            <p>Wie ga jij vandaag zijn? Word lid en maak je gepersonaliseerde avatar!</p>
+            <a href="#">Word nu lid!
+                <img aria-hidden="true" class="iconKnoppen" src="images/next.png" alt="">
+            </a>
+        </div>
 
         <nav>
             <ul>
@@ -174,16 +175,19 @@
                 <img aria-hidden="true" src="" alt="">
                 <img aria-hidden="true" src="images/mini-figuur.webp" alt="">
                 <h2>Creëer je unieke avatar! </h2>
-                <a href="#">Ontdekken <img aria-hidden="true" src="images/right-arrow.png" alt=""></a>
+                <a href="#">Ontdekken 
+                    <img aria-hidden="true" class="iconKnoppen" src="images/right-arrow.png" alt="">
+                </a>
             </div>
 
             <div>
                 <h2>Video's voor jou</h2>
-                <video src=""></video>
+                <video autoplay muted loop src="video/StarWars.mp4"></video>
                 <h3>X-wing vs. TIE Fighter | Vier het jubileum</h3>
             </div>
+        </section>
 
-            <div>
+  
                 <h2>Sets die je gezien moet hebben</h2>
                 <!-- carousel andere -->
                  <ul>
@@ -218,8 +222,7 @@
                         </a>
                     </li>
                  </ul>
-            </div>
-        </section>
+            
 
         <section class="ontdekMeer">
             <h2>Ontdek meer</h2>
@@ -248,6 +251,6 @@
         </section>
     </main>
 
-    <script defer src="./scripts/script.js"></script>
+    <script defer src="./styles/speelplek.js"></script>
 </body>
 </html>
