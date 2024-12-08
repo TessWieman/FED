@@ -1,0 +1,229 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+    box-sizing:border-box;  
+    font-family: Cera Pro, sans-serif;
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--color-text:#111;
+	--size-p-text: medium;
+	--weight-p-text: 350;
+	--size-h2-text: large;
+	--weight-h2-text: bold;
+	--color-text-2: white;
+	--color-background: black;
+	--dark-mode-background: #004848;
+	--dark-mode-knoppen: black;
+}
+
+
+/********/
+/* body */
+/********/
+body {
+    margin: 0;
+    background-color: #E3F1FF;
+}
+
+
+/***************/
+/* anker tags */
+/**************/
+a {
+	text-decoration: none;
+	color: #111;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+/*******************/
+/* img tag */
+/*******************/
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+/**************/
+/* button tag */
+/**************/
+button {
+    border: none;
+	background-color: transparent;
+}
+
+
+/****************/
+/* .iconKnoppen */
+/****************/
+.iconKnoppen {
+    width: 2%;
+    height: auto;
+}
+
+
+/*******************/
+/* headerSpeelplek */
+/*******************/
+.headerSpeelplek h1 {
+    position: relative;
+	visibility: hidden;
+}
+
+.headerSpeelplek > a {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .headerSpeelplek > a {
+        display: block;
+        width: 40px;
+    }
+    nav {
+        /* naar boven zetten */
+    }
+}
+
+/* .headerSpeelplek div img:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.headerSpeelplek div img:nth-of-type(2) {
+    position: absolute;
+    top: 7em;
+    left: .5em;
+}
+
+.headerSpeelplek div img:nth-of-type(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+}
+
+.headerSpeelplek div img:nth-of-type(4) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+}
+
+.headerSpeelplek div p {
+    color: var(--color-text-2);
+}
+
+.headerSpeelplek div a {
+    display: inline-block;
+	background: #ffd50a;
+    width: 10em;
+    padding: 1em;
+    border-radius: 1em;
+    color: brown;
+    font-weight: 550;
+    text-align: center;
+}
+
+.headerSpeelplek nav ul:first-of-type{
+    display: flex;
+    position: relative;
+    bottom: 0;
+    background-color: white;
+    border-radius: 2em;
+    /* justify-content: center;
+    text-align: center; */
+}
+
+.headerSpeelplek nav ul:nth-of-type(1) img {
+    width: 40px;
+}
+
+
+/******************/
+/* section: games */
+/******************/
+section.games ul li figcaption {
+    display: inline-block;
+	background: #abd9ff;
+	border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 1em;
+}
+
+section.games ul li:hover{
+    transform: scale(1.1);
+}
+
+section.games ul li img {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+@media (min-width: 582px) {
+    section.games ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/************************/
+/* section: drieKleuren */
+/************************/
+section.drieKleuren div:nth-of-type(1) {
+    background-color: #7845BF;
+    color: var(--color-text-2);
+}
+
+section.drieKleuren div:nth-of-type(1) a {
+    display: inline-block;
+    background: #A61B4E;
+    color: var(--color-text-2);
+    width: 10em;
+    padding: 1em;
+    border-radius: 1em;
+    text-align: center;
+}
+
+section.drieKleuren div:nth-of-type(2) {
+    background-color: #A61B4E;
+    color: var(--color-text-2);
+}
+
+video {
+    width: 60%;
+}
+
+section.drieKleuren div:nth-of-type(3) {
+    background-color: #0468BF;
+    color: var(--color-text-2);
+}
+
+
+/***********************/
+/* section: ontdekMeer */
+/***********************/
+section.ontdekMeer ul {
+	display: flex;
+	overflow-x: auto;
+}
+
+/* section.ontdekMeer ul li {
+	margin: 0em 2em 0em 2em;
+} */
+
+section.ontdekMeer ul li a img {
+	width: 300%;
+	height: auto;
+	border-radius: 1em;
+}

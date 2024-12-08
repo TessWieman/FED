@@ -17,90 +17,109 @@ window.addEventListener('scroll', () => {
   lastScrollY = window.scrollY
 })
 
+// MENU OPENEN EN SLUITEN
+let openButton = document.querySelector("header > button")
+// let sluitButton = document.querySelector(".sluiten")
+let deNav =  document.querySelector(".navHeader")
 
-// menu openen de MENU button 
-// stap 1: zoek de menu-button op en sla die op in een variabele
-var openButton = document.querySelector("header > button")
-
-// stap 2: laat de menu-button luisteren naar kliks en voer dan een functie uit
-openButton.onclick = openMenu
-
-// stap 3: voeg in de functie een class toe aan de nav
-function openMenu() {  
-  // zoek de nav op
-  var deNav = document.querySelector("nav")
-  // voeg class toe aan nav
+function openMenu () {
   deNav.classList.add("toonMenu")
 }
 
-// menu sluiten met de sluit button 
-// stap 1 - zoek sluiten button op
-var sluitButton = document.querySelector("nav button")
+// function sluitMenu () {
+//   deNav.classList.remove("toonMenu")
+// }
 
-// stap 2 - laat die button luisteren naar kliks
-sluitButton.onclick = sluitMenu
+openButton.addEventListener('click', openMenu)
+// sluitButton.addEventListener('click', sluitMenu)
 
-// stap 3 - in de functie verwijder de class van de nav
-function sluitMenu() {
-  var deNav = document.querySelector("nav")
-  deNav.classList.remove("toonMenu")
-}
 
-// bonus: menu sluiten met escape 
+// SUBMENU OPENEN EN SLUITEN
+//bron: https://chatgpt.com/c/6752e90d-10b4-8004-872b-b24a43b9ee54
+let lijstButtons = document.querySelectorAll(".lijst2") // Alle knoppen die submenu openen
+let submenuItems = document.querySelectorAll(".navLijst2");// Alle submenu-elementen
+
+lijstButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    // Zorg dat alle andere submenu's sluiten
+    submenuItems.forEach((submenu, submenuIndex) => {
+      if (submenuIndex !== index) {
+        submenu.classList.remove("toonSubmenu")
+      }
+    })
+
+    // Toggle het submenu dat bij de knop hoort
+    submenuItems[index].classList.toggle("toonSubmenu")
+  })
+})
+
+// Selecteer alle terugknoppen
+let terugKnoppen = document.querySelectorAll(".terug")
+
+// Voeg een eventlistener toe aan elke terugknoppen
+terugKnoppen.forEach((knop) => {
+  knop.addEventListener("click", () => {
+    // Vind het dichtstbijzijnde submenu en verwijder de 'toonSubmenu'-klasse
+    let submenu = knop.closest(".navLijst2")
+    if (submenu) {
+      submenu.classList.remove("toonSubmenu")
+    }
+  })
+})
+
+// Selecteer alle sluitknoppen
+let sluitKnoppen = document.querySelectorAll(".sluiten")
+
+// Voeg een eventlistener toe aan elke sluitknop
+sluitKnoppen.forEach((knop) => {
+  knop.addEventListener("click", () => {
+    // Sluit submenu's
+    let submenu = document.querySelector(".navLijst2.toonSubmenu")
+    if (submenu) {
+      submenu.classList.remove("toonSubmenu")
+    }
+
+    // Sluit hoofdmenu
+    let hoofdmenu = document.querySelector(".navHeader.toonMenu")
+    if (hoofdmenu) {
+      hoofdmenu.classList.remove("toonMenu")
+    }
+  })
+})
+
+
+
+// MENU SLUITEN MET ESCAPE
+// bron: https://codepen.io/TessWieman/pen/ByBoLNW
 window.onkeydown = handleKeydown;
 
 function handleKeydown(event) {
   if (event.key == "Escape") {
-    var deNav = document.querySelector("nav")
     deNav.classList.remove("toonMenu")
   }
-  // if (event.key == "Escape") {
-  //   let winkelen = document.querySelector (".lijst2")
-  //   winkelen.classList.remove("toonMenu")
-  // }
+  if (event.key == "Escape") {
+    let winkelen = document.querySelector (".lijst2")
+    winkelen.classList.remove("toonMenu")
+  }
 }
 
-//beweging menu tweede lijst maken 
-// let openButton2 = document.querySelector(".navLijst2")
 
-// openButton2.onclick = openMenu2
+// count maken verlanglijst en winkelwagen
+// let currentCount = 0 
 
-// function openMenu2 () {
-//   let winkelen = document.querySelector (".lijst2")
-//   winkelen.classList.add("toonmenu")
+// let countLike = document.querySelector(".empty") 
+// let heartKnop = document.querySelector(".like")
+
+// heartKnop.addEventListener('click', plusCountWinkel)
+
+// function plusCountWinkel () {
+//   if (currentCount <= countLike) {
+//     currentCount + 1
+//   }
 // }
 
-// Klik op de knop om navLijst2 te openen
-// let lijst2Buttons = document.querySelectorAll(".lijst2"); // Meerdere knoppen mogelijk
+// heartKnop.addEventListener('click', plusCountWinkel)
 
-// lijst2Buttons.forEach(button => {
-//   button.onclick = function () {
-//     // Zoek het bijbehorende submenu op (ul.navLijst2)
-//     let submenu = this.nextElementSibling;
-
-//     if (submenu && submenu.classList.contains("navLijst2")) {
-//       submenu.classList.add("toonSubmenu"); // Voeg de class toe om het submenu te tonen
-//     }
-//   };
-// });
-
-// // Sluit submenu met een algemene sluit-knop of Escape
-// let sluitKnoppen = document.querySelectorAll(".navLijst2 button");
-
-// sluitKnoppen.forEach(button => {
-//   button.onclick = function () {
-//     let submenu = this.closest(".navLijst2");
-//     submenu.classList.remove("toonSubmenu"); // Verwijder de class om het submenu te verbergen
-//   };
-// });
-
-// // Sluit submenu met de Escape toets
-// window.onkeydown = function (event) {
-//   if (event.key === "Escape") {
-//     let openSubmenus = document.querySelectorAll(".navLijst2.toonSubmenu");
-//     openSubmenus.forEach(submenu => submenu.classList.remove("toonSubmenu"));
-//   }
-// };
 
 
 

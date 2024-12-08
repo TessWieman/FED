@@ -38,7 +38,6 @@ main {
 	background-color: #14a2a1;
 }
 
-
 /***************/
 /* anker tags */
 /**************/
@@ -53,6 +52,19 @@ a:hover {
 
 ul, ol {
 	list-style: none;
+}
+
+/***********/
+/* img tag */
+/***********/
+img {
+	width: 100%;
+	height: auto;
+}
+
+button {
+	background-color: white;
+	border: none;
 }
 
 
@@ -82,15 +94,18 @@ ul, ol {
 	transition: top 0.3s;
 }
 
-header div button {
+/* header button {
 	border: none;
 	background-color: white;
-}
+} */
 
-/* kijken of dit wel goed gaat met button img  */
-header > a img,  button img {
+header > a img {
 	width: 2.5em;
 	height: auto;
+}
+
+button img {
+	width: 4em;
 }
 
 div button img, nav ul li a img, div a img {
@@ -98,19 +113,48 @@ div button img, nav ul li a img, div a img {
 	height: auto;
 }
 
+header ul li:first-of-type a {
+	display: inline-block;
+	background: #abd9ff;
+	border-radius: .5em;
+	text-align: center;
+	width: 90%;
+}
+
+header ul {
+	margin: 1em;
+	line-height: 2.5em;
+}
+
 /***************************************************/
 /* bron: https://codepen.io/TessWieman/pen/ByBoLNW */
 /***************************************************/
 header {
 	display:flex;
-	/* justify-content:space-between; */
 	align-items:center;
-	
-	position:sticky;
 	top:0;
-
 	width: 100%;
 	background: white;
+	font-size: large;
+	/* border-bottom: 2px #ffd50a; */
+}
+
+@media (min-width: 901px){
+	header > a{
+		margin: 1em;
+	}
+	header, header button {
+		background-color: #ffd50a;
+	}
+	header > button {
+		display: none;
+	}
+	.navheader {
+		translate:0% 0%;
+	}
+	.breadcrumbs{
+		margin-top: 5.5em;
+	}
 }
    
 /***************/
@@ -123,7 +167,7 @@ header > button {
 /************/
 /* HET MENU */
 /************/
-nav {
+.navHeader {
 	position:fixed;
 	left:0;
 	right:0;
@@ -131,8 +175,11 @@ nav {
 	bottom:0;
 	
 	translate:-100% 0%;
+	z-index: 1;
 	
 	transition:translate .3s;
+
+	background: white;
 }
 
 header nav u li a img {
@@ -141,65 +188,29 @@ header nav u li a img {
 }
   
 /* als menu open is */
-nav.toonMenu {
+.navHeader.toonMenu {
 	translate:0% 0%;
 }
 
-/* eigen code tweede lijst */
 .navLijst2 {
-  position: fixed;
-  top: 0;
-  right: -100%; /* Dit moet de lijst buiten beeld houden */
-  width: 300px;
-  height: 100%;
-  background: white;
-  transition: right 0.3s ease-in-out;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	translate: -100% 0%;
+	z-index: 2;
+
+	transition: translate 0.3s;
+
+	background: white;
+	font-size: large;
 }
 
 .navLijst2.toonSubmenu {
-  right: 0; /* Schuift de lijst naar binnen */
+	translate: 0% 0%;
 }
-
-  
-/****************************************************************/
-/* styling voor de header als de browser minimaal 38em breed is */
-/****************************************************************/
-/* @media (min-width:38em) {
-	header > button {
-		display:none;
-	}	
-	nav {
-		position:static;
-		translate:unset;
-		padding:0;
-		
-		background:none;
-	}	
-	nav button {
-		display:none;
-	}
-	nav ul {
-		display:flex;
-		gap:1em;
-	}
-	nav a {
-		flex-direction:column;
-		
-		border:none;
-	}
-	header > a:last-of-type {
-		flex-direction:column;
-		}
-} */
-
-/****************************************************************/
-/* styling voor de header als de browser minimaal 57em breed is */
-/****************************************************************/
-/* @media (min-width:57em) {
-	header > a:last-of-type, nav a {
-		flex-direction:row;
-	}
-} */
 
 
 /************************/
@@ -276,12 +287,7 @@ section.categorieSets ul {
 	display: flex;
 	text-align: center;
 	gap: .4em;
-	/* flex-wrap: wrap; */
-
-	/* display: grid; */
-	/* grid-template-columns: 1fr 1fr 1fr 1fr;  */
-	/* gap: .4em; */
-	/* justify-content: center; */
+	flex-wrap: wrap;
 }
 
 section.categorieSets ul li a img {
@@ -295,24 +301,7 @@ section.categorieSets h3 {
 	text-align: center;
 }
 
-/*https://chatgpt.com/c/674dc11e-69f4-8004-a049-d1661abe8772*/
-/* @media (max-width: 375px) { 
-	.categorieSets ul {
-	grid-template-columns: repeat(4, 1fr); 
-	}
-}
-  
-@media (min-width: 1440px) { 
-	.categorieSets ul {
-	grid-template-columns: repeat(9, 1fr); 
-	}
-}
-  
-@media (min-width: 376px) and (max-width: 1439px) { 
-	.categorieSets ul {
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	}
-} */
+
   
 
 /*********************/
@@ -335,7 +324,7 @@ section.infoSets > ul li{
 	background: white;
 	row-gap: 0.5em;
 	padding: .5em;
-	min-width: 85%;
+	min-width: 10em;
 }
 
 section.infoSets .like {
@@ -348,7 +337,6 @@ section.infoSets .like {
 
 section.infoSets > ul li p:nth-of-type(4) {
 	background-color: #ffd50a;
-	/* padding: .5em; */
 	grid-column-end: -1;
 	grid-row-start: 1;
 	align-self: center;
@@ -430,11 +418,11 @@ section.sideScrollSets ul{
 	display: flex;
 	text-align: center;
 	overflow-x: auto;
+	gap: 5em;
 }
 
-section.sideScrollSets .afbSet{
-	width: 120%;
-	height: auto;
+section.sideScrollSets .afbSet {
+	width: 325px;
 }
 
 section.sideScrollSets .logo{
@@ -626,8 +614,8 @@ section.katBanner .icons {
 	height:100%; */
 	
 	text-decoration: none;
-	color: var(--caroCarrouselMainColor);
-  	background-color: var(--caroCarrouselShadeColor);
+	/* color: var(--caroCarrouselMainColor); */
+  	/* background-color: var(--caroCarrouselShadeColor); */
 	/* border-radius: 50%; */
   	/* outline: none;
 	box-shadow: inset 0 0 0 1px currentColor; */
@@ -637,11 +625,11 @@ section.katBanner .icons {
 
 .caroCarrousel > nav a:hover,
 .caroCarrousel > nav a:focus {
-  	color: var(--caroCarrouselAccentColor);
+  	color: #ffd50a;
 }
 
 .caroCarrousel > nav a.current {
-  	background-color: currentColor;
+  	background-color: #ffd50a;
 }
 
 
@@ -684,9 +672,9 @@ footer ul li a {
 
 footer div:first-of-type > button {
 	background: #18142D;
-	color: white;
+	/* color: white; */
 	display: flex;
-	border: none;
+	/* border: none; */
 }
 
 footer div:first-of-type button img {
@@ -717,6 +705,10 @@ footer div:nth-of-type(2) a img {
 
 footer div:nth-of-type(2) input {
 	padding: 1em;
+}
+
+input:user-invalid {
+	color: red;
 }
 
 footer div:nth-of-type(4) {
@@ -755,7 +747,7 @@ footer div:nth-of-type(6) ul li {
 /*********************/
 /* half scherm */
 /* de lijst elementen moeten nog als vierkantjes staan */
-@media (min-width: 903px) {
+@media (min-width: 901px) {
 	footer {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -764,6 +756,10 @@ footer div:nth-of-type(6) ul li {
 	footer div:nth-of-type(4) {
 		display: block;
 	}
+	/* footer div:nth-of-type(4) ul:nth-of-type(2) {
+		grid-column-end: -1;
+		grid-column-start: 3;
+	} */
 	footer div:nth-of-type(3) {
 		display: none;
 	}
@@ -787,18 +783,15 @@ footer div:nth-of-type(6) ul li {
 }
 
 /* volledig scherm */
-/* de lijst elementen moeten nog naast elkaar staan */
 @media (min-width: 1360px) {
 	footer {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: 6fr 1fr 1fr 1fr;
 	}
-	/* footer div:nth-of-type(4) {
-		display: block;
-	}
-	footer div:nth-of-type(3) {
-		display: none;
+	/* footer div:nth-of-type(4) ul:nth-of-type(2) {
+		grid-column-end: -1;
+		grid-column-start: 3;
 	} */
 	footer div:nth-of-type(2) {
 		grid-row-start: 2;
@@ -872,41 +865,25 @@ details {
 		background-color: var(--dark-mode-background);
 		color: var(--color-text-2);
 	}
+	a {
+		color: var(--color-text-2);
+	}
+	section.infoSets ul li, section.infoSets > ul li p:nth-of-type(4) {
+		background-color: var(--dark-mode-knoppen);
+	}
+	#justBolletjes, #justBolletjes ul li  {
+		background-color: var(--color-text);
+	}
+	.caroCarrousel > nav a.current {
+		background-color: var(--dark-mode-background);
+	}
+	section.FAQ {
+		background: var(--dark-mode-background);
+	}
+	/* footer > button h3 {
+		color: var(--color-text-2);
+	} */
 }
 
 
 
-/*************/
-/* Speelplek */
-/*************/
-
-/*******************/
-/* headerSpeelplek */
-/*******************/
-.headerSpeelplek h1 {
-	visibility: hidden;
-}
-
-/* .headerSpeelplek img:first-of-type {
-	width: 10em;
-	height: auto;
-} */
-
-
-/***********************/
-/* section: ontdekMeer */
-/***********************/
-section.ontdekMeer ul {
-	display: flex;
-	overflow-x: auto;
-}
-
-/* section.ontdekMeer ul li {
-	margin: 0em 2em 0em 2em;
-} */
-
-section.ontdekMeer ul li a img {
-	width: 300%;
-	height: auto;
-	border-radius: 1em;
-}
