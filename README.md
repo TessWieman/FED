@@ -269,8 +269,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   | Hoe kan ik de video van de Speelplek pagina in mijn document zetten?       | ...                | ...          | ...              |
   | De afbeelding banner met de kat is op mobiel ingezoomd en op laptop zijn normale grootte, hoe zoom ik een afbeelding in?                                                                          | ...                | ...          | ...              |
   | Tips voor de side-slider met positionering (vanaf Home Alone set)?         | ...                | ...          | ...              |
-  | Hoe selecteer in mijn css media query de foot ul li?                       | ...                | ...          | ...              |
-  | Moet ik plaatjes verander van kleur bij dark mode, zo ja hoe?                       | ...                | ...          | ...              |  
+  | Hoe selecteer in mijn css media query de footer ul li?                     | ...                | ...          | ...              |
+  | Moet ik plaatjes verander van kleur bij dark mode, zo ja hoe?              | ...                | ...          | ...              |  
 
 
 
@@ -279,10 +279,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Pagina id geven (in de main of body), zodat de css makkelijk in één te doen.
+  - Media screen and (minmax ..px) {} is in principe niet nodig maar maakt dat printen en kleuren mogelijk is. 
+  - Video zit in de source van de website. Deze downloaden en in mapje zetten.
+  - Img width 100% geven in CSS video ook
+  - Bij video autpolay muted loop zetten.
+  - Tweede javascript maken voor de tweede pagina. 
+  - Pop up op dezelfde manier als het het hamburger menu.
+  - 10em zetten bij min-width of max-width geven. 
+  - Picture gebruiken voor plaatje veranderen bij de katBanner.
 
 </details>
 
@@ -329,6 +334,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   3. [codepen carousel ](https://codepen.io/shooft/pen/ZEpXmrg)
   4. header, Thomas Norden & ChatGPT
   5. [css details en summary](https://www.sitepoint.com/style-html-details-element/)
-  6. 
+  6. [picture tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+  7. [tweede submenu openen](https://chatgpt.com/c/6752e90d-10b4-8004-872b-b24a43b9ee54)
+
 
 </details>
