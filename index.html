@@ -26,9 +26,12 @@
 
 		<!-- onderdelen in het menu -->
 		<nav class="navHeader">
-			<button>
-				<img class="sluiten" src="images/sluiten.png" alt="sluiten">
-			</button>
+			<div>
+				<h2>Menu</h2>
+				<button>
+					<img class="sluiten" src="images/sluiten.png" alt="sluiten">
+				</button>
+			</div>
 
 			<ul>
 				<li>
@@ -46,16 +49,20 @@
 						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</button>
 					<ul class="navLijst2">
-						<li>
-							<button>
-								<img class="terug" src="images/back.png" alt="terug">
-							</button>
-						</li>
-						<li>
-							<button>
-								<img class="sluiten" src="images/sluiten.png" alt="sluiten">
-							</button>
-						</li>
+						<div>
+							<li>
+								<button>
+									<img class="terug" src="images/back.png" alt="terug">
+								</button>	
+							</li>
+							<li>Menu</li>
+							<li>
+								<button>
+									<img class="sluiten" src="images/sluiten.png" alt="sluiten">
+								</button>
+							</li>
+						</div>
+						<li class="bevinden">winkelen</li>
 						<li>
 							<button>
 								Sets per thema
@@ -127,16 +134,20 @@
 						<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 					</button>
 					<ul class="navLijst2">
-						<li>
-							<button>
-								<img class="terug" src="images/back.png" alt="terug">
-							</button>
-						</li>
-						<li>
-							<button>
-								<img class="sluiten" src="images/sluiten.png" alt="sluiten">
-							</button>
-						</li>
+						<div>
+							<li>
+								<button>
+									<img class="terug" src="images/back.png" alt="terug">
+								</button>
+							</li>
+							<li>Menu</li>
+							<li>
+								<button>
+									<img class="sluiten" src="images/sluiten.png" alt="sluiten">
+								</button>
+							</li>
+						</div>
+						<li class="bevinden">ontdekken</li>
 						<li>
 							<button>
 								Onze waarden 
@@ -190,16 +201,20 @@
 						<img aria-hidden="true"class="icons"  src="images/next.png" alt="">
 					</button>
 					<ul class="navLijst2">
-						<li>
-							<button>
-								<img class="terug" src="images/back.png" alt="terug">
-							</button>
-						</li>
-						<li>
-							<button>
-								<img class="sluiten" src="images/sluiten.png" alt="sluiten">
-							</button>
-						</li>
+						<div>
+							<li>
+								<button>
+									<img class="terug" src="images/back.png" alt="terug">
+								</button>
+							</li>
+							<li>Menu</li>
+							<li>
+								<button>
+									<img class="sluiten" src="images/sluiten.png" alt="sluiten">
+								</button>
+							</li>
+						</div>
+						<li class="bevinden">help</li>
 						<li>
 							<button>Bestelstatus controlleren</button>
 						</li>
@@ -257,13 +272,12 @@
 			<button>
 				<img src="images/account.png" alt="account">
 			</button>
-			<button>
+			<button class="wishlist">
 				<img src="images/heart.png" alt="mijn verlanglijst">
 				<span class="empty">0</span>
 			</button>
 			<a href="#">
 				<img src="images/shopping-bag.png" alt="winkelwagentje">
-				<span class="empty">0</span>
 			</a>
 		</div>
 	</header>
@@ -290,9 +304,11 @@
 				<h1>Kerstcadeaus 2024</h1>
 				<a class="rondeKnoppen" href="#">Producten</a>
 			</div>
-			<a href="#">
+			<picture>
+				<source media="(min-width: 901px)" srcset="images/kerstBanner.jpg">
+				<source media="(max-width: 901px)" srcset="images/Botanische tuin.jpg">
 				<img class="banner" src="images/Botanische tuin.jpg" alt="Botanische tuin set">
-			</a>
+			</picture>
 			<h2>Bouw een geheime tuin</h2>
 			<p>Beleef schoonheid uit de Victoriaanse tijd met de nieuwe Botanische tuin.</p>
 			<a class="rondeKnoppen" href="#">Koop nu
@@ -370,8 +386,8 @@
 					<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 				</a>
 				
-				<button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
-				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button>
+				<!-- <button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
+				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button> -->
 			</div>
 
 			<ul>
@@ -403,6 +419,46 @@
 					<p>€329,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Het melkwegstelsel</h3>
+					<img class="plaatje" src="images/melkweg.png" alt="Het melkwegstelsel">
+					<p>18+</p>
+					<p aria-label="er zitten 3091 lego blokjes in deze set">3091</p>
+					<p>€199,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Retro radio</h3>
+					<img class="plaatje" src="images/radio.png" alt="Retro radio">
+					<p>18+</p>
+					<p aria-label="er zitten 906 lego blokjes in deze set">906</p>
+					<p>€99,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Imperial Dropship vs. Rebel Scout Speeder</h3>
+					<img class="plaatje" src="images/dropship.png" alt="Imperial Dropship vs. Rebel Scout Speeder">
+					<p>8+</p>
+					<p aria-label="er zitten 383 lego blokjes in deze set">383</p>
+					<p>€39,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Nieuw</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Jaws</h3>
+					<img class="plaatje" src="images/jaws.png" alt="Jaws">
+					<p>18+</p>
+					<p aria-label="er zitten 906 lego blokjes in deze set">1479</p>
+					<p>€149,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
 					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 			</ul>
@@ -453,8 +509,8 @@
 					<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 				</a>
 
-				<button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
-				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button>
+				<!-- <button class="none"><img src="images/back.png" alt="ga terug naar de vorige sets"></button>
+				<button class="none"><img src="images/next.png" alt="ga naar meerdere sets"></button> -->
 			</div>
 
 			<ul>
@@ -486,6 +542,46 @@
 					<p>€14,99</p>
 					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
 					<p>Nieuw</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Vincent van Gogh - De sterrennacht</h3>
+					<img class="plaatje" src="images/sterrennacht.png" alt="Vincent van Gogh - De sterrennacht">
+					<p>18+</p>
+					<p aria-label="er zitten 2316 lego blokjes in deze set">2316</p>
+					<p>€169,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Zeldzame item</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Het Nest – Verzameleditie</h3>
+					<img class="plaatje" src="images/harrypotter-ron-huis.png" alt="Het Nest – Verzameleditie">
+					<p>18+</p>
+					<p aria-label="er zitten 2405 lego blokjes in deze set">2405</p>
+					<p>€259,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>LEGO® Titanic</h3>
+					<img class="plaatje" src="images/titanic.png" alt="LEGO® Titanic">
+					<p>18+</p>
+					<p aria-label="er zitten 9090 lego blokjes in deze set">9090</p>
+					<p>€679,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
+					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
+				</li>
+				<li>
+					<h3>Jaws</h3>
+					<img class="plaatje" src="images/jaws.png" alt="Jaws">
+					<p>18+</p>
+					<p aria-label="er zitten 1479 lego blokjes in deze set">1479</p>
+					<p>€149,99</p>
+					<button class="like"><img src="images/heart.png" alt="verlanglijst"></button>
+					<p>Exclusieve</p>
 					<button><img aria-hidden="true" src="images/shopping-bag.png" alt=""> In Tas</button>
 				</li>
 			</ul>
@@ -578,7 +674,7 @@
 		<section id="justBolletjes" class="caroCarrousel" aria-label="Voorbeeld met alleen bolletjes" tabIndex="-1">
 			<h2>#LEGOChristmas</h2>
 			<p>Bekijk onze favoriete foto's van onze fancommunity! Wil je jouw LEGO® creaties met iedereen delen? Plaats je foto's op Instagram met de tag @LEGO en maak kans om op de website te komen.</p>
-			<a class="rondeKnoppen2" href="#">Nu winkelen
+			<a href="#">Nu winkelen
 				<img aria-hidden="true" class="icons" src="images/next.png" alt="">
 			</a>
 			<h3>#LEGOChristmas</h3>
@@ -671,9 +767,9 @@
 		<div>
 			<h3>Abonneren op digitale marketing-e-mails</h3>
 			<input type="email" placeholder="Je e-mailadres">
-			<a href="#">
+			<!-- <a href="#">
 				<img src="images/next.png" alt="e-mail bevestigen">
-			</a>	
+			</a>	 -->
 		</div>
 
 		<div>
