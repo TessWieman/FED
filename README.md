@@ -78,17 +78,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Global code 
   - De HTML code is vrijwel gevalideert, echter zijn er wel een aantal errors. 
-  - ??? Gebruik een lang attribuut voor het html-element.
+  - Gebruik een lang attribuut voor het html-element.
   - Elke pagina heeft zijn eigen unieke titel.
-  - ??? Zorg ervoor dat de viewport-zoom niet is uitgeschakeld.
+  - Zorg ervoor dat de viewport-zoom niet is uitgeschakeld.
 
   Keyboard
   - Er is een zichtbare focusstijl voor interactieve elementen waarnaar wordt genavigeerd (tab en shift + tab) via toetsenbord invoer. Maar soms loopt deze vast nadat er is genavigeerd vooral als er naar een volgende pagina wordt genavigeerd.
   - De focusvolgorde van het toetsenbord komt overeen met de visuele lay-out.
   
   Mobile and touch
-  - ??? Controleer of de site in elke richting kan worden gedraaid.
-  - ??? Horizontaal scrollen verwijderen.
+  - De site kan in elke richting worden gedraaid.
+  - Horizontaal scrollen verwijderen lukt.
   - Knoppen en linkpictogrammen kunnen gemakkelijk worden geactiveerd.
   - Er is voldoende ruitme tussen interactieve items om een scrolgebied te creëen.
 
@@ -104,7 +104,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Images
   - Niet alle images hebben een alt atribute. 
   - Decoratieve plaatsen hebben geen alt atribute.
-  - ??? Bied een tekstalternatief voor complexe afbeeldingen zoals diagrammen, grafieken en kaarten.
+  - Er zijn geen moeilijke afbeeldingen die tekst-alternatieven nodig heeft.
   - Afbeeldingen die tekst bevatten, hebben een alt-beschrijving. Deze is soms niet heel concreet.
 
   Media
@@ -116,28 +116,25 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Controls
   - Er worden a elementen gebruikt voor links.
   - Links zijn herkenbaar als links.
-  - ??? Zorg ervoor dat de besturingselementen de status :focus hebben.
   - Er worden button elementen gebruikt voor buttons.
-  - ??? Zorg voor een skip-link en zorg ervoor dat deze zichtbaar is wanneer de focus ligt.
   - Links die in een nieuwe tablad of venster worden geopend worden geïdentiviseerd.
 
   Appearance
   - De donkere modus wordt niet ondersteund.
   - Hoge-contrast modus wordt ondersteund.
-  - ??? Vergroot de tekstgrootte naar 200%.
+  - De tekst wordt vergroot.
   - Kleur is niet de enige manier waarop informatie wordt overgebracht.
   
   Animation 
   - Animaties zijn subtiel op de website.
   - Er is geen mechanisme om achtergrond video te pauzeren.
-  - ??? Zorg ervoor dat alle animaties voldoen aan de mediaquery 'Voorkeur voor verminderde beweging'.
+  - Niet alle afbeeldingen hebben een media query. 
   
   Color contrast
   - Alle teksten hebben een normaal formaat.
   - Alle teksten hebben een contrast.
   - Alle icoons hebben een contrast.
-  - ??? Controleer tekst die afbeeldingen of video overlapt.
-  - ??? Controleer aangepaste ::selectiekleuren.
+  - De pagina heeft geen drak modus 
 </details>
 
 
@@ -241,9 +238,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
-  ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
-
+  ### Bevindingen screenreader test
+  - Alle linkjes doen het en hebben een goede naam.
+  - Het is me momenteel nog niet gelukt om de alle tags te laten voorlezen. Ik denk dat het eerder aan mij ligt dat de screenreader best lastig vind.
+  - Alle menu onderdelen worden nu nog steeds voorgelezen ook al zijn ze in de header te zien (op groot scherm).
+  - De screenreader loopt niet vast nadat een toetsenbord functie wordt gebruikt. 
 </details>
 
 
@@ -284,7 +283,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   - Video zit in de source van de website. Deze downloaden en in mapje zetten.
   - Img width 100% geven in CSS video ook
   - Bij video autpolay muted loop zetten.
-  - Tweede javascript maken voor de tweede pagina. 
+  - Nog een aparte javascript en css maken voor de tweede pagina. 
   - Pop up op dezelfde manier als het het hamburger menu.
   - 10em zetten bij min-width of max-width geven. 
   - Picture gebruiken voor plaatje veranderen bij de katBanner.
@@ -301,19 +300,38 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/screencapture-127-0-0-1-5500-2024-12-09-18_47_30.png" width="375px" alt="Mijn nagemaakte kerst pagina">
+  <img src="readme-images/screencapture-127-0-0-1-5500-speelplek-html-2024-12-09-19_29_42.png" width="375px" alt="Mijn nagemaakte speelplek pagina">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
-
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  grid 
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 20.00.02.png width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  - Het is mij niet gelukt op pop-ups te maken voor buttons in de header.
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.50.12.png" width="375px" alt="bummer">
+  - Het is mij niet gelukt om een de kopjes van navLijst in de header te zetten als het scherm groter wordt. Maar de screenreader leest dit wel voor op elk beelscherm formaat.
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.54.28.png" width="375px" alt="bummer">
+  - De hele header is mij niet gelukt om na te maken bij de speelplek pagina. 
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.46.33.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.46.52.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.47.04.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.47.35.png" width="375px" alt="bummer">
+  - Het is mij niet gelukt om #legochristmas plaatjes een tekst te geven en deze te positioneren, Dit kwam omdat het niet responsive zou kunnen werken. Toen heb ik met figcaption gewerkt, maar dan werkt de carousel niet meer. Dus heb ik het oorspronkelijke probleem opgelost door een goede atl tag te geven dat zegt wat de teksten zouden zeggen.
+    <img src="readme-images/Schermafbeelding 2024-12-09 om 19.51.56.png" width="375px" alt="bummer">
+  - Het is mij op de speelplek pagina niet gelukt om twee soorten carousels te combineren. Ik heb dit probleem opgelost door overflow-x: auto; te gebruiken. 
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.52.39.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.53.01.png" width="375px" alt="bummer">
+  - Het is mij niet gelukt om in de media query van de footer de ul goed te plaatsen. :nth-of-child, :nth-of-type en een class toevoegen werkte niet. 
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.54.10.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.54.28.png" width="375px" alt="bummer">
+  - De winkelwagen werkt niet als er op de "In tas" gelikt wordt. 
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.58.21.png" width="375px" alt="bummer">
+  <img src="readme-images/Schermafbeelding 2024-12-09 om 19.58.36.png" width="375px" alt="bummer">
+  - De font-family Cera Pro is nergens als code te downloaden, dus deze heb ik niet kunnen toevoegen. 
 </details>
 
 
@@ -336,6 +354,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   5. [css details en summary](https://www.sitepoint.com/style-html-details-element/)
   6. [picture tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
   7. [tweede submenu openen](https://chatgpt.com/c/6752e90d-10b4-8004-872b-b24a43b9ee54)
+  8. [white spce, overflow en text-overflow](https://chatgpt.com/c/6756ccab-38ec-8004-83e3-991aae302577)
 
 
 </details>
