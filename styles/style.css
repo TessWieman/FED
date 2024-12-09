@@ -19,7 +19,6 @@
 	--color-text-2: white;
 	--color-background: black;
 	--dark-mode-background: #004848;
-	--dark-mode-knoppen: black;
 }
 
 
@@ -94,21 +93,17 @@ button {
 	transition: top 0.3s;
 }
 
-/* header button {
-	border: none;
-	background-color: white;
-} */
-
 header > a img {
 	width: 2.5em;
 	height: auto;
 }
 
-button img {
+header > button img {
 	width: 4em;
+	height: auto;
 }
 
-div button img, nav ul li a img, div a img {
+.iconsHeader button img, nav ul li a img, div a img {
 	width: 1.25em;
 	height: auto;
 }
@@ -122,8 +117,13 @@ header ul li:first-of-type a {
 }
 
 header ul {
-	margin: 1em;
 	line-height: 2.5em;
+}
+
+.iconsHeader {
+	margin-left: auto;
+	display: flex;
+	gap: .5em;
 }
 
 /***************************************************/
@@ -136,7 +136,6 @@ header {
 	width: 100%;
 	background: white;
 	font-size: large;
-	/* border-bottom: 2px #ffd50a; */
 }
 
 @media (min-width: 901px){
@@ -182,6 +181,12 @@ header > button {
 	background: white;
 }
 
+.navHeader > div {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 1.5em;
+}
+
 header nav u li a img {
 	width: 1em;
 	height: auto;
@@ -212,6 +217,34 @@ header nav u li a img {
 	translate: 0% 0%;
 }
 
+.navLijst2 div {
+	display: flex;
+	margin-top: 1em;
+}
+
+.sluiten {
+	width: 4em;
+	height: auto;
+}
+
+.terug {
+	width: 2em;
+	height: auto;
+}
+
+.navLijst2 div li:last-of-type {
+	margin-left: auto;
+}
+
+.navLijst2 .bevinden {
+	background-color: #016db7;
+	color: var(--color-text-2);
+	text-decoration: underline;
+	padding-left: 1em;
+}
+
+
+
 
 /************************/
 /* Section: breadcrumbs */
@@ -241,7 +274,6 @@ section.breadcrumbs ol li p, section.breadcrumbs ol li a {
 }
 
 
-
 /**************************/
 /* Section: aangebodenSet */
 /*************************/
@@ -249,7 +281,6 @@ section.breadcrumbs ol li p, section.breadcrumbs ol li a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1em;
 }
 
 .banner {
@@ -262,6 +293,7 @@ section.breadcrumbs ol li p, section.breadcrumbs ol li a {
 	padding: .6em 1.25em;
 	border: 2px solid #004848;
 	border-radius: 1.56em;
+	margin-bottom: .5em;
 }
 
 .rondeKnoppen:hover {
@@ -279,6 +311,12 @@ section.aangebodenSet h2 {
 	font-size: var(--size-h2-text);
 	font-weight: var(--weight-h2-text);
 }
+
+section.aangebodenSet h2, section.aangebodenSet p, section.aangebodenSet .rondeKnoppen {
+	margin-left: 2em;
+}
+
+
 
 /**************************/
 /* Section: categorieSets */
@@ -307,6 +345,51 @@ section.categorieSets h3 {
 /*********************/
 /* Section: infoSets */
 /*********************/
+
+/* bron like en winkelwagen: https://codepen.io/shooft/pen/MWMGLGV?editors=0010 */
+span.updated {
+	animation-name:updated;
+	animation-duration:.2s;
+	animation-iteration-count:2;
+}
+
+@keyframes updated {
+	0% {
+	  scale:1;
+	}
+	50% {
+	  scale:1.5;
+	}
+	100% {
+	  scale:1;
+	}
+  }
+
+/* wishlist*/
+.wishlist {
+	position:relative;
+}
+  
+/* getalletjes */
+span {
+	position:absolute;
+	right:-.6em;
+	top:-.6em;
+	
+	min-width:1.25em;
+	padding:0 .25em;
+	
+	background-color:crimson;
+	border-radius:.625em;
+	
+	font-size:1em;
+	text-align:center;
+	line-height:1.25em;
+	color:white;
+}
+
+
+
 section.infoSets .none {
 	display: none;
 }
@@ -324,7 +407,7 @@ section.infoSets > ul li{
 	background: white;
 	row-gap: 0.5em;
 	padding: .5em;
-	min-width: 10em;
+	min-width: 14em;
 }
 
 section.infoSets .like {
@@ -398,7 +481,9 @@ section.infoSets > ul li button:nth-of-type(2):hover {
 section.infoSets h2 {
 	font-size: var(--size-h2-text);
 	font-weight: var(--weight-h2-text);
+	margin-left: 2em;
 }
+
 
 @media (min-width: 582px) {
 	section.infoSets .none {
@@ -434,6 +519,11 @@ section.sideScrollSets p {
 	font-size: var(--size-p-text);
 	font-weight: var(--weight-p-text);
 }
+
+section.sideScrollSets h2 {
+	margin-left: 2em;
+}
+
 
 /************************/
 /* Section: tekstBanner */
@@ -497,11 +587,6 @@ section.katBanner .icons {
 /* Bron: https://codepen.io/shooft/pen/ZEpXmrg gebruikt voor het maken van de bolletjes onder de plaatjes, maar ik heb er zelf nummertjes van gemaakt */
 /******************************/
 .caroCarrousel {
-	/* basis waarden die door de hele carrousel gebruikt worden */
-	/* kun je zelf aanpassen */
-	/* --caroCarrouselMainColor:#1b75b3;
-  	--caroCarrouselAccentColor:#333; */
-
   	position: relative;
 	outline:none;
 	background: white;
@@ -524,15 +609,8 @@ section.katBanner .icons {
 	background: grey;
 	border-radius: 1.56em;
 	color: var(--color-text-2);
-}
 
-/* dark mode */
-/* @media (prefers-color-scheme: dark) {
-  .caroCarrousel {
-    --caroCarrouselMainColor:#ccc;
-    --caroCarrouselShadeColor:#4449;
-  }
-} */
+}
 
 /************************************/
 /* de carrousel elementen container */
@@ -579,7 +657,8 @@ section.katBanner .icons {
 /* de stijlen voor jouw content hier */
 .caroCarrousel > ul li > img {
   	display: block;
-  	width: 100%;
+  	width: 90%;
+	margin: 2em;
 }
 
 /****************/
@@ -596,30 +675,14 @@ section.katBanner .icons {
   	list-style: none;
 	
 	display: flex;
-	/* 	flex-wrap:wrap; */
   	justify-content: center;
   	gap:.4em;
 }
 
-/* een bolletje container */
-/* .caroCarrousel > nav li {
-	flex-basis: 1.2em;
-	aspect-ratio: 1/1;
-} */
-
 /* de bolletjes */
 .caroCarrousel > nav a {
 	display: block;
-	/* width:100%;
-	height:100%; */
-	
-	text-decoration: none;
-	/* color: var(--caroCarrouselMainColor); */
-  	/* background-color: var(--caroCarrouselShadeColor); */
-	/* border-radius: 50%; */
-  	/* outline: none;
-	box-shadow: inset 0 0 0 1px currentColor; */
-  
+	text-decoration: none;  
   	transition: 0.5s;
 }
 
@@ -672,9 +735,7 @@ footer ul li a {
 
 footer div:first-of-type > button {
 	background: #18142D;
-	/* color: white; */
 	display: flex;
-	/* border: none; */
 }
 
 footer div:first-of-type button img {
@@ -685,6 +746,7 @@ footer div:first-of-type button img {
 footer div:first-of-type button h3 {
 	font-size: var(--size-p-text);
 	font-weight: var(--weight-p-text);
+	color: white;
 }
 
 footer div:first-of-type ul li {
@@ -696,12 +758,13 @@ footer img:first-of-type {
 	height: auto;
 }
 
-footer div:nth-of-type(2) a img {
+/* Uitgeschakeld */
+/* footer div:nth-of-type(2) a img {
 	width: 8%;
 	background: #f47d20;
 	border-top-right-radius: .5em;
 	border-bottom-right-radius: .5em;
-}
+} */
 
 footer div:nth-of-type(2) input {
 	padding: 1em;
@@ -723,7 +786,7 @@ footer div:nth-of-type(5) ul {
 }
 
 footer div:nth-of-type(5) ul li a img {
-	width: 50%;
+	width: 40%;
 	height: auto;
 }
 
@@ -880,9 +943,6 @@ details {
 	section.FAQ {
 		background: var(--dark-mode-background);
 	}
-	/* footer > button h3 {
-		color: var(--color-text-2);
-	} */
 }
 
 

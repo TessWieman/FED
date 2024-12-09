@@ -120,6 +120,100 @@ function handleKeydown(event) {
 
 // heartKnop.addEventListener('click', plusCountWinkel)
 
+/****************************/
+/* CODE VOOR DE KOOPKNOPPEN */
+/****************************/
+
+
+
+/************************/
+/* naar kliks luisteren */
+/************************/
+
+/* zelfde code als bij JS 3-stap oefening 3 */
+
+var shopButtons = document.querySelectorAll("button.shop");
+for (let i = 0; i < shopButtons.length; i++) {
+  shopButtons[i].onclick = addToShoppingCart;
+}
+
+
+
+/***********************/
+/* winkelwagen vullen */
+/**********************/
+function addToShoppingCart() {
+
+  /* zelfde code als bij JS 3-stap oefening 3 */
+  
+  let shoppingCartAmount = document.querySelector(".shopping-cart span");
+  let currentAmount = shoppingCartAmount.innerHTML;
+  currentAmount = parseInt(currentAmount);
+  let newAmount = currentAmount + 1;
+  shoppingCartAmount.innerHTML = newAmount;
+  
+  
+  /******************/
+  /* JOUW CODE HIER */
+  /******************/
+  
+  /* om wat nadruk te leggen op de update van de cart */
+  /* class 'updated' toevoegem aan het rode bolletje */
+  /* om een animatie te triggeren */
+  shoppingCartAmount.classList.add("updated");
+  
+  
+  /* de class weer verwijderen als de animatie klaar is */
+  /* dan kan de animatie bij de volgnede update weer getriggered worden */
+  
+  /* OPTIE 1 */
+  /* dat kan met setTimeout */
+  // setTimeout(function(){
+  //     shoppingCartAmount.classList.remove("updated");
+  // }, 400);
+  /* 400ms - net zolang als de animatie */
+  
+  /* OPTIE 2 */
+  /* mooier is om het met een animationend event doen */
+  shoppingCartAmount.onanimationend = () => {
+    shoppingCartAmount.classList.remove("updated");
+  }
+  /* dan hoef je de tijden van setTimeout en animatie niet gelijk te houden */
+}
+
+
+
+/* bron: https://codepen.io/shooft/pen/MWMGLGV?editors=1000*/
+var heartButtons = document.querySelectorAll("button.like");
+for (i = 0; i < heartButtons.length; i++) {
+  heartButtons[i].onclick = addToFavorites;
+}
+
+/****************************************/
+/* liefde declareren of liefde wegnemen */
+/****************************************/
+function addToFavorites(event) {
+  let clickedHeart = event.target;
+  let theFish = clickedHeart.closest("li");
+  theFish.classList.toggle("liked");
+  let wishlistAmount = document.querySelector(".wishlist span");
+  let currentAmount = wishlistAmount.innerHTML;
+  currentAmount = parseInt(currentAmount);
+  let newAmount;
+  if (theFish.classList.contains("liked")) {
+    newAmount = currentAmount + 1;
+  } else {
+    newAmount = currentAmount - 1;
+  }
+  wishlistAmount.innerHTML = newAmount;
+  
+  wishlistAmount.classList.add("updated");
+  
+  wishlistAmount.onanimationend = () => {
+    wishlistAmount.classList.remove("updated");
+  }
+}
+
 
 
 
