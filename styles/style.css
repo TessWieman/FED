@@ -217,23 +217,32 @@ header nav u li a img {
 	translate: 0% 0%;
 }
 
-.navLijst2 div {
+/* .navLijst2 .groep {
 	display: flex;
+	flex-direction: row;
 	margin-top: 1em;
-}
+} */
 
 .sluiten {
 	width: 4em;
 	height: auto;
+	position: absolute;
+	top: 1em;
+	right: 2em;
+}
+
+.menu {
+	position: absolute;
+	top: .5em;
+	left: 4em;
 }
 
 .terug {
 	width: 2em;
 	height: auto;
-}
-
-.navLijst2 div li:last-of-type {
-	margin-left: auto;
+	position: absolute;
+	top: 1em;
+	left: 2em;
 }
 
 .navLijst2 .bevinden {

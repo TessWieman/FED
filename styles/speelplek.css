@@ -210,7 +210,10 @@ section.games ul li .eersteFigCap {
 }
 
 /* bron: https://chatgpt.com/c/6756ccab-38ec-8004-83e3-991aae302577 */
-section.games ul li .tweeFigCap {
+section.games p {
+    display: block;
+	background: #abd9ff;
+    padding: 1em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     overflow: hidden; /* Verbergt alles buiten de container */
